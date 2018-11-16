@@ -72,4 +72,10 @@ defmodule Issues.CLI do
     |> Enum.reverse
   end
 
+  def main(argv) do
+    argv
+    |> parse_args
+    |> process
+  end
+
 end
