@@ -2,7 +2,6 @@ defmodule TestStats do
   use ExUnit.Case
 
   describe "Stats on lists of ints" do
-
     setup do
       [
         list: [1, 3, 5, 7, 9, 11],
@@ -24,5 +23,3 @@ defmodule TestStats do
     end
   end
 end
-
-

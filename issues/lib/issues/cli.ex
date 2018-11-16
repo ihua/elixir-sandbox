@@ -1,5 +1,5 @@
 defmodule Issues.CLI do
-  import Issues.TableFormatter, only: [ print_table_for_columns: 2]
+  import Issues.TableFormatter, only: [print_table_for_columns: 2]
 
   @default_count 4
 
@@ -40,9 +40,10 @@ defmodule Issues.CLI do
   end
 
   def process(:help) do
-    IO.puts """
+    IO.puts("""
     usage: issues <user> <project> [ count | #{@default_count} ]
-    """
+    """)
+
     System.halt(0)
   end
 
@@ -57,7 +58,7 @@ defmodule Issues.CLI do
   def decode_response({:ok, body}), do: body
 
   def decode_response({:error, error}) do
-    IO.puts "Error fetching from Github: #{error["message"]}"
+    IO.puts("Error fetching from Github: #{error["message"]}")
     System.halt(2)
   end
 
@@ -69,7 +70,7 @@ defmodule Issues.CLI do
   def last(list, count) do
     list
     |> Enum.take(count)
-    |> Enum.reverse
+    |> Enum.reverse()
   end
 
   def main(argv) do
@@ -77,5 +78,4 @@ defmodule Issues.CLI do
     |> parse_args
     |> process
   end
-
 end
