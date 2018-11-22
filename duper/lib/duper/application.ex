@@ -5,6 +5,8 @@ defmodule Duper.Application do
 
   use Application
 
+  @vsn "0"
+
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
